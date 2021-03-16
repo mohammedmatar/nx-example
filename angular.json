@@ -47,7 +47,12 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/_redirects",
+              "apps/demo/src/_headers",
+              "apps/demo/src/assets"
+            ],
             "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
@@ -139,6 +144,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "todos": {
+      "projectType": "library",
+      "root": "libs/todos",
+      "sourceRoot": "libs/todos/src",
+      "prefix": "multiple-actions-example",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/todos/src/**/*.ts",
+              "libs/todos/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/todos"],
+          "options": {
+            "jestConfig": "libs/todos/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

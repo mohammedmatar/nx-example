@@ -17,6 +17,7 @@
   },
   "projects": {
     "demo": { "tags": [] },
-    "demo-e2e": { "tags": [], "implicitDependencies": ["demo"] }
+    "demo-e2e": { "tags": [], "implicitDependencies": ["demo"] },
+    "todos": { "tags": [] }
   }
 }

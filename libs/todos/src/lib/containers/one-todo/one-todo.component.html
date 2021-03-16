@@ -1,0 +1,9 @@
+<p>one-todo works!</p>
+<hr/>
+<ul *ngIf='selectedTodo$ | async as todo'>
+  <li>todo ID: {{todo.id}}</li>
+  <li>todo title: {{todo.title}}</li>
+  <li>todo userId: {{todo.userId}}</li>
+  <li [ngClass]="{ 'completed': (todo.completed) }">todo completed: {{todo.completed}}</li>
+  <li><button (click)='markAsCompleted($event, todo)'>complete todo</button></li>
+</ul>
